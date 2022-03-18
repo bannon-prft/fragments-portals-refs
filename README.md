@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# User-List App - React Complete Guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is a practice project from [React - The Complete Guide (incl Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
-## Available Scripts
+This app was built before watching the videos on how to complete it
 
-In the project directory, you can run:
+## Things Learned from this project
 
-### `npm start`
+- Learned that a modal (at least in React) is just a component that sits on top of the page
+  - Add backdrop so that rest of page cannot be interacted with
+- Try to pass styles to Card components to where they get combined with the default Card styles, instead of setting them separate
+- I overly complicate many things
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Improvements Made after watching videos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Add Drop shadow to Card (doesn't seem to do anything with the dark background)
+- Added padding to the inputs on AddUser component
+- Added fallback type ('button') to the Button component
+- Changed button text to render from props.children instead of through a property
+- Added hover/active styling to Button
+- Added modal component for errors
+- Removed section elements from App.js
+- Refactored styling, Moved some styling from Card to individual components
+- Removed DisplayBox component
 
-### `npm test`
+## Improvements suggested but not made after watching videos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Merged external classes** (such as the 'form-control' class in AddUser component) into the Card component
+  - **Did make this change**
+- Instructor didn't use state for validation, instead just checked in the formSubmitHandler
+  - If had gone this way, need to make sure enteredAge is a number, so force with +enteredAge
+  - Doing it with state, can add styles later if wanted by adding an invalid class to the input
 
-### `npm run build`
+## Improvements made just looking through the code
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Changed classNames to use lowerCamelCase so that brackets and strings don't need to be used for property names of the styles
+- Fixed validation for age (had checking length but instead check that it is > 0)
+- Changed DisplayUser component to DisplayUsers as it is a list of all the users
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Differences from instructor project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Used scss files for some styling to nest selectors
+- Used `Date.now()` for key on list instead of `Math.random()`
+- Buttons stretch to 100% if screen small enough
+- Error message all in one because of how I originally handeled the validation on input
 
-### `npm run eject`
+## Other things to note
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Updating userList in App.js depends on previous userList, so the function form of upating it is used
+- Probably shouldn't have used a full DisplayBox component, as the component itself is very specific and can't take in dynamic data, it only can take in specific user data. Maybe too much for this small project or should be refactored to allow any kind of data to be entered instead of just 'username' and 'age'. Also this adds the `key` prop to the DisplayBox component itself instead of just adding it to the `li` tag
+  - **Removed this**
+- Wasn't sure initially how to build a modal, so didn't add that part before watching instructor do it
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## To run this project
+Clone this repo and cd into the project folder
+```bash
+npm install
+npm start
+```

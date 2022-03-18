@@ -6,6 +6,16 @@
   padding: 0.3rem 0.7rem;
   font-size: inherit;
 
+  &:hover,
+  &:active {
+    background: #741188;
+    border-color: #741188;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
   @media (min-width: 768px) {
     width: fit-content;
   }

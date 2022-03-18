@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import AddUser from './components/Users/AddUser'
-import DisplayUser from './components/Users/DisplayUser'
+import DisplayUser from './components/Users/DisplayUsers'
 
 const App = () => {
   const [userList, setUserList] = useState([])
@@ -17,12 +17,8 @@ const App = () => {
 
   return (
     <div>
-      <section>
-        <AddUser onAddUser={addUserHandler} />
-      </section>
-      <section>
-        <DisplayUser list={userList} />
-      </section>
+      <AddUser onAddUser={addUserHandler} />
+      <DisplayUser list={userList} />
     </div>
   )
 }
