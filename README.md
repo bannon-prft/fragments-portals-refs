@@ -2,7 +2,7 @@
 
 This app is a practice project from [React - The Complete Guide (incl Hooks, React Router, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
 
-This app was built before watching the videos on how to complete it
+This app was built before watching the videos on how to complete it, and then some modifications were made after watching the instructor's solution
 
 ## Things Learned from this project
 
