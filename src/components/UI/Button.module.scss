@@ -1,0 +1,12 @@
+.button {
+  width: 100%;
+  cursor: pointer;
+  background: #4c0b56;
+  color: #ffffff;
+  padding: 0.3rem 0.7rem;
+  font-size: inherit;
+
+  @media (min-width: 768px) {
+    width: fit-content;
+  }
+}

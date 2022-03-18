@@ -1,0 +1,10 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: left;
+
+  input {
+    margin: 10px 0;
+  }
+}
